@@ -1,6 +1,6 @@
 import { SET_REPOS } from '../actions/repos';
 
-const INITIAL_STATE = ['Hello'];
+const INITIAL_STATE = [];
 
 const repos = (state = INITIAL_STATE, action) => {
   switch (action.type) {

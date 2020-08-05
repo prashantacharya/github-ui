@@ -48,7 +48,7 @@
 
 .profile__follow-info {
   display: flex;
-  width: 250px;
+  width: 80%;
   margin: 0 auto;
   justify-content: space-between;
   text-transform: uppercase;
@@ -71,6 +71,7 @@
   .profile {
     width: 35%;
     margin-right: 30px;
+    /* position: fixed; */
   }
 
   .profile__online-presence {
