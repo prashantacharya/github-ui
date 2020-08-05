@@ -27,6 +27,8 @@ function Profile(props) {
         </div>
       </div>
 
+      <p className="profile__bio">{props.bio}</p>
+
       <div className="profile__follow-info">
         <div className="profile__followers">
           <h3>40</h3>

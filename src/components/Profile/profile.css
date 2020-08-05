@@ -40,6 +40,12 @@
   margin-right: 5px;
 }
 
+.profile__bio {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
 .profile__follow-info {
   display: flex;
   width: 250px;

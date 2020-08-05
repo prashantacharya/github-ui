@@ -1,35 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Profile from '../components/Profile';
+import { get } from '../utils/http';
+import { setUser } from '../actions/users';
 
-function ProfilePage(props) {
-  const profileProps = {
-    name: 'Prashant Acharya',
-    avatar_url: 'https://avatars3.githubusercontent.com/u/23692097?v=4',
-    followers: 30,
-    following: 40,
-    location: 'Kathmandu',
-    username: 'prashantacharya',
-    twitter_username: 'dev_prashaant',
-    blog: 'https://prashantacharya.github.io'
-  };
-  const loading = true;
+function ProfilePage({ profileProps, setData }) {
+  const [loading, setLoading] = useState(false);
 
-  const fetchData = () => {};
-
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setLoading(true);
+    get(`/users/${process.env.REACT_APP_USERNAME}`)
+      .then((data) => {
+        const { name, avatar_url, followers, following, location, login: username, twitter_username, blog, bio } = data;
+        setData({ name, avatar_url, followers, following, location, username, twitter_username, blog, bio });
+      })
+      .then(() => {
+        setLoading(false);
+      });
+  }, [setData]);
 
   return <>{loading ? <div>Loading</div> : <Profile {...profileProps} />}</>;
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
-  return state;
+  return { profileProps: state.user };
 };
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setData: (val) => {}
+    setData: (data) => {
+      dispatch(setUser(data));
+    }
   };
 };
 

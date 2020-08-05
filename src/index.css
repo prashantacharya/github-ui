@@ -32,3 +32,9 @@ h6 {
     padding: 15px;
   }
 }
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 50px;
+  }
+}

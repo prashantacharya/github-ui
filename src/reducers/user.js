@@ -1,6 +1,6 @@
 import { SET_USER } from '../actions/users';
 
-const INITIAL_STATE = { username: 'prashantacharya' };
+const INITIAL_STATE = {};
 
 const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
