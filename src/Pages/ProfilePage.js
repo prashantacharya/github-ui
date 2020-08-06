@@ -19,7 +19,7 @@ function ProfilePage({ profileProps, setData }) {
       });
   }, [setData]);
 
-  return <>{loading ? <div>Loading</div> : <Profile {...profileProps} />}</>;
+  return <>{loading ? <div className="profile">Loading</div> : <Profile {...profileProps} />}</>;
 }
 
 const mapStateToProps = (state) => {
