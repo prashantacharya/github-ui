@@ -10,7 +10,7 @@ function RepoPage({ repos, setData }) {
 
   useEffect(() => {
     setLoading(true);
-    get(`/users/${process.env.REACT_APP_USERNAME}/repos?sort=updated`)
+    get(`/users/${process.env.REACT_APP_USERNAME}/repos?sort=created`)
       .then((data) => {
         setData(data);
       })
