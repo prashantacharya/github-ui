@@ -1,0 +1,48 @@
+.repo__card {
+  list-style-type: none;
+  margin-bottom: 25px;
+  background-color: #495155;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.repo__description {
+  width: 90%;
+  margin: 10px 0px;
+}
+
+.repo__made-with {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.repo__made-with span {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+}
+
+.repo__stars-link {
+  display: flex;
+}
+
+.repo__stars-link svg {
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.repo__stars-link p:first-child {
+  margin-right: 20px;
+}
+
+.repo__stars-link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .repo__card {
+    margin-bottom: 40px;
+  }
+}
